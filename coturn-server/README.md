@@ -7,7 +7,6 @@ To enable voice & video call, you need to install Turn Server.
 sudo apt-get -y update
 sudo apt-get -y install coturn
 ```
-
 2. Enable coturn by editing `/etc/default/coturn`, remove “#” comment on `TURNSERVER_ENABLED` to enable turnserver.
 
 3. Create your coturn config in `/etc/turnserver.conf`, Some config line in the example is commented out to disable SSL, you can enable it by removing the “#” and editing it to your own need.
@@ -16,6 +15,11 @@ sudo apt-get -y install coturn
 ```
 turnserver
 ```
+
+```
+sudo turnserver -a -o -v -n  --no-dtls --no-tls -u test:test -r "someRealm"
+```
+
 
 ## Firewall Rules
 
